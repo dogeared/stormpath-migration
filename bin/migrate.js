@@ -41,12 +41,37 @@ async function migrate() {
     const timer = logger.startTimer();
 
     await introspect();
-    await migrateCustomSchema();
-    await migrateAccounts();
-    await migrateDirectories();
-    await migrateGroups();
-    await migrateOrganizations();
-    await migrateApplications();
+
+    if (!config.skipCustomSchema) {
+      await migrateCustomSchema();
+    } else {
+      logger.header('skipping Custom Schema Phase');
+    }
+    if (!config.skipAccounts) {
+      await migrateAccounts();
+    } else {
+        logger.header('skipping Accounts Phase');
+    }
+    if (!config.skipDirectories) {
+      await migrateDirectories();
+    } else {
+        logger.header('skipping Directories Phase');
+    }
+    if (!config.skipGroups) {
+      await migrateGroups();
+    } else {
+        logger.header('skipping Groups Phase');
+    }
+    if (!config.skipOrganizations) {
+      await migrateOrganizations();
+    } else {
+        logger.header('skipping Organizations Phase');
+    }
+    if (!config.skipApplications) {
+      await migrateApplications();
+    } else {
+        logger.header('skipping Applications Phase');
+    }
 
     logger.header('Done');
     timer.done(`Wrote log output to ${logger.logFile}`);

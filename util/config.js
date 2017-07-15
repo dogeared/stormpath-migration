@@ -80,6 +80,36 @@ const config = yargs
       alias: 'l',
       choices: ['error', 'warn', 'info', 'verbose', 'debug', 'silly'],
       default: 'info'
+    },
+    skipCustomSchema: {
+        description: 'Skip the Custom Schema phase',
+        required: false,
+        default: false
+    },
+    skipAccounts: {
+        description: 'Skip the Account Create/Update phase',
+        required: false,
+        default: false
+    },
+    skipDirectories: {
+        description: 'Skip the Directories phase',
+        required: false,
+        default: false
+    },
+    skipGroups: {
+        description: 'Skip the Groups phase',
+        required: false,
+        default: false
+    },
+    skipOrganizations: {
+        description: 'skip the Organizations phase',
+        required: false,
+        default: false
+    },
+    skipApplications: {
+        description: 'skip the Applications phase',
+        required: false,
+        default: false
     }
   })
   .example('\t$0 --stormPathBaseDir /path/to/export/data --oktaBaseUrl https://your-org.okta.com --oktaApiToken 5DSfsl4x@3Slt6', '')
