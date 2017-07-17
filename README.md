@@ -176,6 +176,39 @@ After starting the import, this memory limit is logged to the console:
 [2017-07-23 18:50:29] INFO     Heap size limit: 4329Mb
 ```
 
+### Skipping
+
+If the tool crashes along the way or you know that only certain types of objects have been updated in the latest export, you can skip certain stages of the import.
+
+*Note*: These are advanced options. Generally speaking, each stage of the import depends on the previous stage having completed. If you skip an import stage and dependent
+data is not present, you will see errors during the import.
+
+Here's are the skip switches (they are false by default):
+
+### `--skipCustomSchema`
+
+Skip custom schema create & update. This is okay once all accounts have previously been processed and a schema has been pushed with all know properties.
+
+### `--skipAccounts`
+
+Skip account create & update. Any new or updated accounts in the export are ignored.
+
+### `--skipDirectories`  
+
+Skip directory create & update. This is ok as long as there aren't any new account providers that would cause downstream errors because we don't have a reference to them.
+
+### `--skipGroups`
+
+Skip group create and update. This is ok as long as there aren't any new groups that would cause downstream errors because we don't have a reference to them.
+
+### `--skipOrganizations`
+
+Skip organization create and update. This is ok as long as there aren't any new account providers that would cause downstream errors because we don't have a reference to them.
+
+### `--skipApplications`
+
+Skip application create and update. Any new or updated applications in the export are ignored.
+
 ### Organization Reset
 
 If you need to run the import script again, but wish to start with a blank slate, this tool also provides a reset script that will remove all data from your org. The reset script takes the same arguments as the import script.

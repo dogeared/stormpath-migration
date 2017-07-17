@@ -45,32 +45,32 @@ async function migrate() {
     if (!config.skipCustomSchema) {
       await migrateCustomSchema();
     } else {
-      logger.header('skipping Custom Schema Phase');
+      logger.header('skipping creating/updating Custom Schema');
     }
     if (!config.skipAccounts) {
       await migrateAccounts();
     } else {
-        logger.header('skipping Accounts Phase');
+        logger.header('skipping creating/updating Accounts');
     }
     if (!config.skipDirectories) {
       await migrateDirectories();
     } else {
-        logger.header('skipping Directories Phase');
+        logger.header('skipping creating/updating Directories');
     }
     if (!config.skipGroups) {
       await migrateGroups();
     } else {
-        logger.header('skipping Groups Phase');
+        logger.header('skipping creating/updating Groups');
     }
     if (!config.skipOrganizations) {
       await migrateOrganizations();
     } else {
-        logger.header('skipping Organizations Phase');
+        logger.header('skipping creating/updating Organizations');
     }
     if (!config.skipApplications) {
       await migrateApplications();
     } else {
-        logger.header('skipping Applications Phase');
+        logger.header('skipping creating/updating Applications');
     }
 
     logger.header('Done');

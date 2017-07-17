@@ -82,32 +82,32 @@ const config = yargs
       default: 'info'
     },
     skipCustomSchema: {
-        description: 'Skip the Custom Schema phase',
+        description: 'Skip Custom Schema Create/Update',
         required: false,
         default: false
     },
     skipAccounts: {
-        description: 'Skip the Account Create/Update phase',
+        description: 'Skip Accounts Create/Update',
         required: false,
         default: false
     },
     skipDirectories: {
-        description: 'Skip the Directories phase',
+        description: 'Skip Directories Create/Update',
         required: false,
         default: false
     },
     skipGroups: {
-        description: 'Skip the Groups phase',
+        description: 'Skip Groups Create/Update',
         required: false,
         default: false
     },
     skipOrganizations: {
-        description: 'skip the Organizations phase',
+        description: 'Skip Organizations Create/Update',
         required: false,
         default: false
     },
     skipApplications: {
-        description: 'skip the Applications phase',
+        description: 'Skip Applications Create/Update',
         required: false,
         default: false
     }
